@@ -7,6 +7,7 @@ const geocode = require("./utils/geocode")
 
 console.log(path.join(__dirname, "../public"))
 const app = express() // creating an express application
+const port = process.env.PORT || 3000
 
 //configuring path for the Express
 const publicPath = path.join(__dirname, "../public")
@@ -86,6 +87,6 @@ app.get("*", (req, res) => {
 
 
 //starting the server
-app.listen(3000, () => {
-    console.log("Server is listning on port 3000!")
+app.listen(port, () => {
+    console.log("Server is listning on " + port)
 })
